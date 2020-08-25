@@ -42,6 +42,14 @@
       <h1 class="font-bold text-4xl">{{ article.title }}</h1>
       <p>{{ article.description }}</p>
       <p class="pb-4">Post last updated: {{ formatDate(article.updatedAt) }}</p>
+      Tags:
+      <span
+        v-for="(tag, id) in article.tags"
+        :key="id"
+        class="truncate uppercase tracking-wider font-medium text-ss px-2 py-1 rounded-full mr-2 mb-2 border border-light-border dark:border-dark-border transition-colors duration-300 ease-linear"
+      >
+        {{ tag }}
+      </span>
       <!-- table of contents -->
       <nav class="pb-6">
         <ul>

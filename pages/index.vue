@@ -1,7 +1,23 @@
 <template>
   <div class="m-8">
     <TheHeader />
-
+    <h1 class="font-bold text-4xl">Tags</h1>
+    <ul class="flex flex-wrap">
+      <li
+        v-for="tag of tags"
+        :key="tag.slug"
+        class="xs:w-full md:w-1/2 px-2 xs:mb-6 md:mb-12 article-card"
+      >
+        <NuxtLink
+          :to="`/blog/tag/${tag.title}`"
+          class="flex transition-shadow duration-150 ease-in-out shadow-sm hover:shadow-md xxlmax:flex-col"
+        >
+          <p class="font-bold text-gray-600 text-sm">
+            {{ tag.title }}
+          </p>
+        </NuxtLink>
+      </li>
+    </ul>
     <h1 class="font-bold text-4xl">Blog Posts</h1>
     <ul class="flex flex-wrap">
       <li
@@ -58,8 +74,13 @@ export default {
       .only(['title', 'description', 'img', 'slug', 'author'])
       .sortBy('createdAt', 'desc')
       .fetch()
+    const tags = await $content('tags', params.slug)
+      .only(['title', 'description', 'img', 'slug', 'author'])
+      .sortBy('title', 'asc')
+      .fetch()
     return {
-      articles
+      articles,
+      tags
     }
   },
   head() {

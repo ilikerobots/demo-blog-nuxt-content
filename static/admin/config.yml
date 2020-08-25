@@ -23,6 +23,10 @@ collections:
       - { label: 'Description', name: 'description', widget: 'string' }
       - { label: 'Image', name: 'img', widget: 'image' }
       - { label: 'Body', name: 'body', widget: 'markdown' }
+      - label: "Tags"
+      - label_singular: "Tag"
+        name: "tags"
+        widget: "list"
       - label: "Products"
         name: "products"
         widget: "list"
@@ -38,3 +42,18 @@ collections:
           - {label: "Name", name: "name", widget: "string"}
           - {label: 'Bio', name: 'bio', widget: 'string' }
           - {label: 'Avatar Image', name: 'img_small', widget: 'image', required: false, allow_multiple: false }
+  - name: 'tags'
+    label: 'Tags'
+    label_singular: 'Tag'
+    format: 'frontmatter'
+    folder: 'content/tags'
+    create: true
+    slug: '{{title}}'
+    preview_path: 'tags/{{slug}}'
+    editor:
+      preview: false
+    fields:
+      - { label: 'Title', name: 'title', widget: 'string' }
+      - { label: 'Description', name: 'description', widget: 'string' }
+      - { label: 'Image', name: 'img', widget: 'image' }
+      - { label: 'Body', name: 'body', widget: 'markdown' }
