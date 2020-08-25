@@ -23,6 +23,13 @@ collections:
       - { label: 'Description', name: 'description', widget: 'string' }
       - { label: 'Image', name: 'img', widget: 'image' }
       - { label: 'Body', name: 'body', widget: 'markdown' }
+      - label: "Products"
+        name: "products"
+        widget: "list"
+        summary: '{{fields.product_id}}: {{fields.product_title}}'
+        fields:
+          - {label: "Title", name: product_title, widget: string}
+          - {label: "Product ID", name: product_id, widget: string, default: "Everything is awesome!"}
       - label: "Author"
         name: "author"
         widget: "object"
