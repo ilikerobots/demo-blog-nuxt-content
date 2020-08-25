@@ -28,8 +28,8 @@ collections:
         widget: "list"
         summary: '{{fields.product_id}}: {{fields.product_title}}'
         fields:
-          - {label: "Title", name: product_title, widget: string}
-          - {label: "Product ID", name: product_id, widget: string, default: "Everything is awesome!"}
+          - {label: "Title", name: product_title, widget: string, hint: "Leave empty to fetch product name"}
+          - {label: "Product ID", name: product_id, widget: string, required: true}
       - label: "Author"
         name: "author"
         widget: "object"
@@ -37,4 +37,4 @@ collections:
           - {label: "Public", name: "public", widget: "boolean", default: true}
           - {label: "Name", name: "name", widget: "string"}
           - {label: 'Bio', name: 'bio', widget: 'string' }
-          - {label: 'Avatar Image', name: 'img_small', widget: 'image', allow_multiple: false }
+          - {label: 'Avatar Image', name: 'img_small', widget: 'image', allow_multiple: false, required:false }
