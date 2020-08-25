@@ -4,6 +4,11 @@ description: This is a description for the article about me
 img: https://images.unsplash.com/photo-1580752300992-559f8e0734e0?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80
 alt: nice image
 date: 2020-07-18
+products:
+  - product_title: SOmething product
+    product_id: "1"
+  - product_title: Another prod
+    product_id: "22"
 author:
   name: Peter
   bio: All about Peter and what he does and where he works
